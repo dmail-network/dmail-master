@@ -1,0 +1,639 @@
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  /* font-family: PingFang SC, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  font-family: Arial, Helvetica, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F0F0F0;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  color: #333;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+iframe {
+  display: none!important;
+}
+
+p,
+ul,
+li,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  user-select: none;
+}
+
+select,
+input {
+  outline: none;
+}
+
+input, textarea {
+  font-family: inherit;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #999;
+}
+
+.common-dialog .MuiPaper-root {
+  max-width: inherit;
+}
+
+.common-dialog .MuiDialogActions-root {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.flex1Hidden {
+  flex: 1;
+  overflow: hidden;
+}
+
+.flexColumn1 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.quick-title {
+  position: relative;
+}
+.quick-title[data-title]::after {
+  display: none;
+  content: attr(data-title);
+  text-transform: capitalize;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%) translateY(5px);
+  background: rgba(51,51,51,0.8);
+  padding: 0 8px;
+  white-space: nowrap;
+  line-height: 22px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #fff;
+}
+.qtitle-top[data-title]::after {
+  top: auto;
+  bottom: 100%;
+  transform: translateX(-50%) translateY(-5px);
+}
+.quick-title[data-title]:hover::after {
+  display: block;
+}
+
+.mobile .no-data-root > svg {
+  width: 150px;
+  height: 104px;
+}
+.mobile .no-data-root p {
+  font-size: 14px;
+}
+
+.mobile .no-data-root p svg {
+  top: 2px;
+}
+
+.mobile .li-circle {
+  font-size: 15px;
+}
+.mobile .li-circle p, .mobile .li-circle > li {
+  padding-left: 10px;
+  margin-bottom: 15px;
+  line-height: 20px;
+}
+.mobile .li-circle p::before, .mobile .li-circle > li::before {
+  width: 5px;
+  height: 5px;
+  top: 6px;
+}
+.li-circle {
+  font-size: 14px;
+}
+.li-circle p, .li-circle > li {
+  position: relative;
+  padding-left: 12px;
+  margin-bottom: 20px;
+  line-height: 16px;
+  color: #666;
+}
+.li-circle p::before, .li-circle > li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  display: block;
+  background-color: #FF563F;
+  border-radius: 50%;
+}
+
+.mobile .base-btn, .mobile .red-btn, .mobile .gray-btn {
+  font-size: 14px;
+  padding: 0 10px;
+  line-height: 30px;
+  border-radius: 8px;
+}
+.mobile .small-btn {
+  line-height: 20px;
+  padding: 0 8px;
+}
+.base-btn, .red-btn, .gray-btn {
+  display: inline-block;
+  padding: 0 15px;
+  line-height: 35px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+}
+.red-btn {
+  background: #FF563F;
+  color: #fff;
+  transition: box-shadow 0.5s ease;
+}
+.red-border-btn {
+  background: none;
+  border: 1px solid #FF563F;
+  color: #FF563F;
+}
+.small-btn {
+  line-height: 30px;
+  padding: 0 12px;
+}
+.red-btn:not(.disabled):hover {
+  box-shadow: 0px 1px 9px 0px rgba(255,86,63,0.7);
+}
+.red-btn:not(.disabled):active {
+  background: #DD4935;
+}
+.red-border-btn:not(.disabled):active {
+  background: rgba(255,86,63,0.05);
+}
+.red-btn.disabled {
+  cursor: not-allowed;
+  background: rgba(255,86,63,0.3);
+}
+.red-border-btn.disabled {
+  border-color: #ddd;
+  background: none;
+  color: rgba(51,51,51,0.3);
+}
+
+.gray-btn {
+  background: #F6F6F6;
+  color: #666;
+  transition: box-shadow 0.5s ease;
+}
+.gray-btn:not(.disabled):hover {
+  box-shadow: 0px 1px 9px 0px rgba(51,51,51,0.3);
+}
+.gray-btn:not(.disabled):active {
+  background: #DDDDDD;
+}
+.gray-btn.disabled {
+  cursor: not-allowed;
+  background: #F6F6F6;
+  color: rgba(51,51,51,0.3);
+}
+
+.cursor-default {
+  cursor: default!important;
+}
+
+/* .chunks {
+  padding: 14px 30px;
+  background-color: #fff;
+  border-radius: 8px;
+} */
+
+.copy {
+  margin-left: 8px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(../images/copy.png) no-repeat;
+  background-size: 100%;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.mobile .bottom-shadow {
+  box-shadow: 0px 0px 2px 0px rgb(0,0,0, 0.1);
+}
+
+.mobile .to-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 15px;
+  bottom: 60px;
+  z-index: 10;
+  min-width: 40px;
+  padding: 0 15px;
+  height: 40px;
+  box-sizing: border-box;
+  background: rgba(17,17,17,0.85);
+  border-radius: 40px;
+  color: #fff;
+  transition: padding 0.4s ease-in 0s;
+}
+.mobile .to-edit span {
+  width: 83px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 16px;
+  overflow: hidden;
+  transition: width 0.4s ease-in 0s;
+}
+.mobile .to-edit.narrower {
+  padding: 0 10px;
+}
+.mobile .to-edit.narrower span {
+  width: 0;
+}
+
+.login-btn {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 240px;
+  margin: 0px auto;
+  box-sizing: border-box;
+  line-height: 48px;
+  padding-left: 50px;
+  border-radius: 36px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.5s ease 0s;
+  overflow: hidden;
+}
+.login-btn-main {
+  background: rgb(51, 51, 51);
+  color: rgb(255, 255, 255);
+}
+.login-btn-main:hover {
+  background: #000;
+}
+.login-btn.disabled {
+  cursor: not-allowed;
+}
+.login-btn.disabled:hover {
+  transition: none;
+}
+.login-btn-main.disabled:hover {
+  background: rgb(51, 51, 51);
+}
+.login-btn strong {
+  font-weight: normal;
+}
+.login-btn i {
+  width: 27px;
+  height: 25px;
+  margin-right: 15px;
+  background: no-repeat center;
+}
+.login-btn .metamask {
+  background-image: url(../images/login-metamask.png);
+  background-size: 27px 25px;
+}
+.login-btn .bnb {
+  background-image: url(../images/bnb.png);
+  background-size: 23px 27px;
+}
+
+.login-btn .bitkeep {
+  background-image: url(../images/login-bitkeep.svg);
+  background-size: 23px 23px;
+}
+
+.login-btn .kucoin {
+  background-image: url(../images/kucoin.svg);
+  background-size: 100%;
+  width: 25px;
+  height: 25px;
+}
+
+.login-btn i.ok {
+  background-image: url(../images/ok.jpeg);
+  background-size: 100%;
+  height: 27px;
+  border-radius: 8px;
+}
+
+.login-btn .plug {
+  background-image: url(../images/login-plug2.png);
+  background-size: 27px 27px;
+}
+
+.login-btn .infinityswap {
+  background-image: url(../images/infinityswap-logo.png);
+  background-size: 30px 23px;
+}
+
+.login-btn .identity {
+  background-image: url(../images/login-identity2.png);
+  background-size: 27px 27px;
+}
+
+.mobile .login-btn-main .identity {
+  width: 36px;
+  height: 36px;
+  background-size: 100%;
+}
+
+.login-btn .loading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+.login-btn .loading .MuiCircularProgress-svg {
+  color: #fff;
+}
+
+.dmail-ava {
+  width: 48px;
+  height: 48px;
+  background: url(../images/nft/12.png) no-repeat;
+  background-size: 100%;
+}
+.dmail-ava1 {
+  background-image: url(../images/nft/01.png);
+}
+.dmail-ava2 {
+  background-image: url(../images/nft/02.png);
+}
+.dmail-ava3 {
+  background-image: url(../images/nft/03.png);
+}
+.dmail-ava4 {
+  background-image: url(../images/nft/04.png);
+}
+.dmail-ava5 {
+  background-image: url(../images/nft/05.png);
+}
+.dmail-ava6 {
+  background-image: url(../images/nft/06.png);
+}
+.dmail-ava7 {
+  background-image: url(../images/nft/07.png);
+}
+.dmail-ava8 {
+  background-image: url(../images/nft/08.png);
+}
+.dmail-ava9 {
+  background-image: url(../images/nft/09.png);
+}
+.dmail-ava10 {
+  background-image: url(../images/nft/10.png);
+}
+.dmail-ava11 {
+  background-image: url(../images/nft/11.png);
+}
+
+
+.switch-chunk {
+  width: 48px;
+  height: 24px;
+  background-color: #DDDDDD;
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color .4s ease 0s;
+}
+.switch-chunk i {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform .4s ease 0s;
+}
+.switch-chunk.on {
+  background-color: #FF563F;
+}
+.switch-chunk.on i {
+  transform: translateX(24px);
+}
+
+.icons-actions {
+  width: 19px;
+  height: 15px;
+  background: no-repeat;
+  background-size: 100%;
+  color: #999;
+}
+.icons-actions.black {
+  color: #38302E;
+}
+.icons-actions.show {
+  display: block;
+}
+
+.icons-actions.icon-refresh {
+  color: #333;
+}
+
+.icon-unread {
+}
+
+.icon-read {
+}
+
+.icon-spam2 {
+  width: 21px;
+  height: 17px;
+}
+
+.icon-trash2 {
+  width: 17px;
+  height: 17px;
+}
+
+.icon-delete {
+  width: 17px;
+  height: 17px;
+}
+
+.icon-restore {
+  width: 14px;
+  height: 17px;
+}
+
+.icon-star2 {
+  width: 18px;
+  height: 17px;
+}
+
+.icon-star2.on {
+  color: #FF563F;
+}
+
+.supported {
+  padding-left: 70px;
+}
+.supported div {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.supported p {
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #666;
+}
+.supported p::before {
+  content: '';
+  width: 3px;
+  height: 3px;
+  background-color: #666;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* @font-face {
+  font-family: "League Spartan-Regular";
+  src: url(../font/LeagueSpartan-Regular.ttf);
+  src: url(../font/LeagueSpartan-Regular.ttf)  format('truetype'),
+  url('../font/LeagueSpartan-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: "League Spartan-Bold";
+  src: url(../font/LeagueSpartan-SemiBold.ttf);
+  src: url(../font/LeagueSpartan-SemiBold.ttf)  format('truetype'),
+  url('../font/LeagueSpartan-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: "League Spartan-Medium";
+  src: url(../font/LeagueSpartan-Medium.ttf);
+  src: url(../font/LeagueSpartan-Medium.ttf)  format('truetype'),
+  url('../font/LeagueSpartan-Medium.woff') format('woff');
+} */
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(../font2/Roboto-Black.ttf);
+  src: url(../font2/Roboto-Black.ttf)  format('truetype'),
+  url('../font2/roboto-black.woff') format('woff');
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url('../font2/Roboto-Bold.ttf');
+  src: url('../font2/Roboto-Bold.ttf')  format('truetype'),
+        url('../font2/roboto-bold.woff') format('woff');
+}
+@font-face {
+      font-family: "Montserrat-Light";
+      src: url(../font2/Roboto-Light.ttf);
+      src: url(../font2/Roboto-Light.ttf)  format('truetype'),
+            url('../font2/roboto-light.woff') format('woff');
+}
+@font-face {
+      font-family: "Montserrat-Medium";
+      src: url(../font2/Roboto-Medium.ttf);
+      src: url(../font2/Roboto-Medium.ttf)  format('truetype'),
+            url(../font2/roboto-medium.woff)  format('woff');
+}
+@font-face {
+      font-family: "Montserrat-Regular";
+      src: url(../font2/Roboto-Regular.ttf);
+      src: url(../font2/Roboto-Regular.ttf)  format('truetype'),
+          url(../font2/roboto-regular.woff)  format('woff');
+}
+@font-face {
+      font-family: "Montserrat-Thin";
+      src: url(../font2/Roboto-Thin.ttf);
+      src: url(../font2/Roboto-Thin.ttf)  format('truetype'),
+        url(../font2/roboto-thin.woff)  format('woff');
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../font2/Roboto-Black.ttf);
+  src: url(../font2/Roboto-Black.ttf)  format('truetype'),
+  url('../font2/roboto-black.woff') format('woff');
+  
+}
+@font-face {
+      font-family: "Roboto-Bold";
+      src: url('../font2/Roboto-Bold.ttf');
+      src: url('../font2/Roboto-Bold.ttf')  format('truetype'),
+            url('../font2/roboto-bold.woff') format('woff');
+}
+@font-face {
+      font-family: "Roboto-Light";
+      src: url(../font2/Roboto-Light.ttf);
+      src: url(../font2/Roboto-Light.ttf)  format('truetype'),
+            url('../font2/roboto-light.woff') format('woff');
+}
+@font-face {
+      font-family: "Roboto-Medium";
+      src: url(../font2/Roboto-Medium.ttf);
+      src: url(../font2/Roboto-Medium.ttf)  format('truetype'),
+            url(../font2/roboto-medium.woff)  format('woff');
+}
+@font-face {
+      font-family: "Roboto-Regular";
+      src: url(../font2/Roboto-Regular.ttf);
+      src: url(../font2/Roboto-Regular.ttf)  format('truetype'),
+          url(../font2/roboto-regular.woff)  format('woff');
+      
+}
+@font-face {
+      font-family: "Roboto-Thin";
+      src: url(../font2/Roboto-Thin.ttf);
+      src: url(../font2/Roboto-Thin.ttf)  format('truetype'),
+        url(../font2/roboto-thin.woff)  format('woff');
+      
+}
